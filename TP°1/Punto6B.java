@@ -11,15 +11,15 @@ public class Punto6B {
     CONTADOR = 1;
     System.out.println("Ingrese tres números entero");
 
-    while (CONTADOR <= 3); {
+    while (CONTADOR <= 3) {
 
         NUM = scanner.nextInt();
         PRODUCTO = PRODUCTO * NUM;
         SUMATORIA = SUMATORIA + NUM;
-        CONTADOR = CONTADOR++; 
+        CONTADOR++; 
         }
     scanner.close();
-    System.out.println("El producto entre los tres números ingresados es =" + PRODUCTO);
-    System.out.println("La sumatoria entre los tres números ingresados es =" + SUMATORIA);
+    System.out.println("El producto entre los tres números ingresados es = " + PRODUCTO);
+    System.out.println("La sumatoria entre los tres números ingresados es = " + SUMATORIA);
     }
 }
