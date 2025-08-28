@@ -1,6 +1,8 @@
+package trabajopractico1;
+
 import java.util.Scanner;
 
-public class Punto5 {
+public class punto5 {
     public static void main(String[]args){
 
     Scanner scanner = new Scanner(System.in);
@@ -26,7 +28,7 @@ public class Punto5 {
             break;
 
         default:
-        System.out.println("Día inválido, ingrese una letra correcta.");
+            System.out.println("Día inválido, ingrese una letra correcta.");
         break;
         }
 

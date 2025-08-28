@@ -1,0 +1,10 @@
+
+        System.out.println("Ingrese el canal");
+        canal = Scanner.nextInt();
+        System.out.println("Ingrese el volumen");
+        volumen = Scanner.nextInt();
+        System.out.println("Ingrese el color");
+        color = Scanner.nextString();
+        System.out.println("Ingrese el estado");
+        encendido = Scanner.nextBoolean();
+        

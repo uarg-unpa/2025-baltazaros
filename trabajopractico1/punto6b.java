@@ -1,6 +1,8 @@
+package trabajopractico1;
+
 import java.util.Scanner;
 
-public class Punto6B {
+public class punto6b {
     public static void main (String[] args){
 
     Scanner scanner = new Scanner(System.in);

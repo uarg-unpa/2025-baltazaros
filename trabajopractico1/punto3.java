@@ -1,5 +1,6 @@
+package trabajopractico1;
 
-public class Punto3 {
+public class punto3 {
     public static void main(String[] args) {
     int A, B, C;
     A = 1;
