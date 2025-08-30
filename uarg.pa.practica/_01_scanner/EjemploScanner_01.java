@@ -7,7 +7,7 @@ public class EjemploScanner_01 {
         System.out.print("¿Cómo te llamas? ");
         String nombre = scanner.nextLine();
 
-        System.out.print("¿Cuántos años tenes? ");
+        System.out.print("¿Cuántos año tenes? ");
         int edad = scanner.nextInt();
         scanner.nextLine(); // Limpia el buffer
 
