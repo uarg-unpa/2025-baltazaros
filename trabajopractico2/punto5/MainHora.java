@@ -46,8 +46,6 @@ public class MainHora {
             H2 = new Hora(hora, minutos, segundos);
         }
 
-        
-
         System.out.println("¿Quiere los minutos totales? (si/no)");
         scanner.nextLine();
         minutosTotales = scanner.nextLine();
