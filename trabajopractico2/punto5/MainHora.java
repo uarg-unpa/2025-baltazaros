@@ -23,10 +23,12 @@ public class MainHora {
 
         if (hora < 0 || hora > 23 || minutos < 0 || minutos > 59 || segundos < 0 || segundos > 59) { 
             System.out.println("Horario inválido");
+            hora = 0;
+            minutos = 0;
+            segundos = 0;
         }
-        else {
-            H1 = new Hora(hora, minutos, segundos);
-        }
+        H1 = new Hora(hora, minutos, segundos);
+
 
         System.out.println("Segunda hora");
         System.out.println("Ingrese la hora:");
@@ -40,11 +42,11 @@ public class MainHora {
 
         if (hora < 0 || hora > 23 || minutos < 0 || minutos > 59 || segundos < 0 || segundos > 59) { 
             System.out.println("Horario inválido");
-            
+            hora = 0;
+            minutos = 0;
+            segundos = 0;
         }
-        else {
-            H2 = new Hora(hora, minutos, segundos);
-        }
+        H2 = new Hora(hora, minutos, segundos);
 
         System.out.println("¿Quiere los minutos totales? (si/no)");
         scanner.nextLine();
@@ -55,10 +57,6 @@ public class MainHora {
                 System.out.println("Hora N°2: " + H2.getHora() + ":" + H2.getMinutos() + ":" + H2.getSegundos() );
                 System.out.println("Minutos totales Hora N°1: " + H1.getTotalminutos());
                 System.out.println("Minutos totales Hora N°2: " + H2.getTotalminutos());
-                break;
-            case "no":
-                System.out.println("Hora N°1: " + H1.getHora() + ":" + H1.getMinutos() + ":" + H1.getSegundos() );
-                System.out.println("Hora N°2: " + H2.getHora() + ":" + H2.getMinutos() + ":" + H2.getSegundos() );
                 break;
             default:
                 System.out.println("Hora N°1: " + H1.getHora() + ":" + H1.getMinutos() + ":" + H1.getSegundos() );

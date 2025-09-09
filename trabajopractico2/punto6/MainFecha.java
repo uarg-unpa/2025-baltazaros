@@ -1,3 +1,5 @@
+package trabajopractico2.punto6;
+
 import java.util.Scanner;
 
 public class MainFecha {

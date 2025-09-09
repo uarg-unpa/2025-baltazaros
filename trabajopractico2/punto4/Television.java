@@ -6,11 +6,11 @@ public class Television {
     private String color;
     private boolean encendido;
 
-    public Television(int cn, int vol, String col, boolean on) {
-        canal = cn;
-        volumen = vol;
-        color = col;
-        encendido = on;
+    public Television(int canal, int volumen, String color, boolean escendido) {
+        this.canal = canal;
+        this.volumen = volumen;
+        this.color = color;
+        this.encendido = escendido;
     }
     
     public void setCanal(int canal) {

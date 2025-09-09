@@ -1,3 +1,5 @@
+package trabajopractico2.punto6; //aparentemente me da error el tema del package, desconozco el porqué, si está todo bien escrito.
+
 public class Fecha {
 
     private int dia, mes, año;

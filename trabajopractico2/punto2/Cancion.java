@@ -1,19 +1,19 @@
 package trabajopractico2.punto2;
 
     public class Cancion {
-    String nombre;
-    String album;
-    String artista;
-    int duracion;
-    int repActual;
+    private String nombre;
+    private String album;
+    private String artista;
+    private int duracion;
+    private int repActual;
     
 
     public Cancion(String nombre, String album, String artista, int duracion, int repActual) {
-    this.nombre = nombre;
-    this.album = album;
-    this.artista = artista;
-    this.duracion = duracion;
-    this.repActual = repActual; 
+        this.nombre = nombre;
+        this.album = album;
+        this.artista = artista;
+        this.duracion = duracion;
+        this.repActual = repActual; 
     }
 
     public String getNombre() {
