@@ -3,6 +3,11 @@ package trabajopractico2.punto2;
 public class Triangulo {
     int base, altura;
     
+    public Triangulo(int base, int altura) {
+        this.base = base;
+        this.altura = altura;
+    }
+    
     public int getBase() {
         return base;
     }
@@ -17,7 +22,7 @@ public class Triangulo {
         this.altura = altura;
     }
 
-    public int getArea() {
+    public int areaTotal() {
         return (base * altura) / 2;
     }
 }
