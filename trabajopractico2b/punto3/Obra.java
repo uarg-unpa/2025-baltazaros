@@ -38,7 +38,7 @@ public class Obra {
     }
 
     public String ToString() {
-        return "Obra: " + nombre + " Hora: " + hora + " Precio: " + precio; 
+        return "Obra: " + nombre + " Hora: " + hora + " Precio: " + precio + " "; 
     }
 
 }
