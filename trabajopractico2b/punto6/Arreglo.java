@@ -1,16 +1,36 @@
-package trabajopractico2b.punto6;
-
 public class Arreglo {
-    int[] array;
-    int contador;
-}
+    private int[] datos;     
+    private int contador;    
 
-public Arreglo(int array) {
-    array[0] = array;
-    contador = 1;
-}
+    public Arreglo(int tamaño) {
+        datos = new int[tamaño];
+        contador = 0;
+    }
 
-public void sgteEntero(int array) {
-    array[contador] = array;
-    contador++;
+    public boolean ingresarNumero(int numero) {
+        if (contador < datos.length) {
+            datos[contador] = numero;
+            contador++;
+            return true;
+        } else {
+            return  false;
+        }
+    }
+
+    public void mostrarNumeros() {
+        if (contador == 0) {
+            System.out.println("El arreglo está vacío.");
+        } else {
+            System.out.print("Números en el arreglo: ");
+            for (int i = 0; i < contador; i++) {
+                System.out.print(datos[i] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public void vaciarArreglo() {
+        contador = 0; 
+        System.out.println("El arreglo ha sido vaciado.");
+    }
 }
