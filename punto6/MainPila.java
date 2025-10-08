@@ -51,6 +51,6 @@ public class MainPila {
     
         // (D)-Dado un entero positivo N, asignar a X el N-ésimo elemento desde la parte superior de pila, sin modificarla
       
-    }
+        }
     
-}
+    }

@@ -15,13 +15,13 @@ public class ColaNombres {
         return (ultimo == frente);
     }
 
-    //verifica si la cola esta o no llena
+    // Verifica si la cola esta o no llena
     public boolean estaLlena() {
         int sigultimo=siguiente(ultimo);
         return (sigultimo == frente);
     }
 
-    //establece cuál es el siguiente elemento
+    // Establece cuál es el siguiente elemento
     private int siguiente(int subind) {
         if(subind == maxcola - 1) {
             return 0;
@@ -29,39 +29,18 @@ public class ColaNombres {
         else;    
             return ++subind;    
         }
-    //inserta un elemento en la cola
-    //precondición: cola no llena y elemento entero
-    //postcondición: elemento entero insertado en cola si no está llena
+        
     public void push(String nombre) {
-    if(!estaLlena()) {
         ultimo=siguiente(ultimo);
         elementos[ultimo]=nombre;
-        }
-        return;
-    }
+    } 
 
-    //borra un elemento de la cola
-    //precondición: cola no vacía
-    //postcondición: elemento entero borrado de la cola si no está vacía
     public String pop() {
-        if(!estaVacia()) {
-            frente=siguiente(frente);
-            return elementos[frente];
-        }
-        else
-            return " ";
+        frente = siguiente(frente); // o frente = (frente + 1) % MAXCOLA
+        return elementos[frente];
     }
 
     public String peek() {
-        String frente = this.pop();
-        ColaNombres aux = new ColaNombres();
-        while (!aux.estaLlena()) {
-            aux.push(this.pop());
-            }
-        push(frente);
-        while (!this.estaLlena()) {
-        this.push(aux.pop());
-                    }        
-        return (frente);
+        return elementos[frente];
     }
 }
