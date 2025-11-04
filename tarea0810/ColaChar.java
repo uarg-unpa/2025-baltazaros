@@ -1,10 +1,11 @@
 public class ColaChar { 
     private final int maxcola=10; 
     private char[] elementos; 
-    private int ultimo;
+    private int ultimo, frente;
 
     public ColaChar() {
         elementos=new char[maxcola];
+        frente=0;
         ultimo=0; 
     }
 
@@ -31,16 +32,7 @@ public class ColaChar {
         } 
 
     public char peek() {
-        char frente = this.pop();
-        ColaChar aux = new ColaChar();
-        aux.push(frente);
-        while (!aux.estaLlena()) {
-            aux.push(this.pop());
-            }
-        while (!estaLlena()) {
-            this.push(aux.pop());
-                    }        
-        return (frente);
+        return elementos[frente];
     }
 
 }
