@@ -36,7 +36,8 @@ public class MainPila {
                     if (cadena.isEmpty()) {
                         System.out.println("No hay ninguna cadena ingresada.");
                     } else {
-                        if (pila.esPalindromo()) { // Me da error a pesar de varios intentos, y formas distintas de realizarlo. Actualmente está codificado la "versión larga" de mis intentos
+                        boolean palindromo = pila.esPalindromo();
+                        if (palindromo)) { // Me da error a pesar de varios intentos, y formas distintas de realizarlo. Actualmente está codificado la "versión larga" de mis intentos, pero viendo la lógica la veo bien.
                             System.out.println("La cadena es un palíndromo.");
                         } else {
                             System.out.println("La cadena no es un palíndromo.");

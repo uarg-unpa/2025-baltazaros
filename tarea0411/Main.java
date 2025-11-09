@@ -4,84 +4,67 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
-        PilaEnteros pila = new PilaEnteros();
-        PilaEnteros aux = new PilaEnteros();
+        ColaTemas cola = new ColaTemas();
+        ColaTemas aux = new ColaTemas();
+
         int opcion;
-        int valor, cima = 0;
 
         do {
-            System.out.println("\n=== MENÚ PILA DE NIVELES DE ENERGÍA ===");
-            System.out.println("1 - Agregar nuevo nivel");
-            System.out.println("2 - Mostrar nivel en la cima");
-            System.out.println("3 - Contar cuántas veces aparece un valor X");
-            System.out.println("4 - Mostrar todos los niveles");
+            System.out.println("\n=== MENÚ REPRODUCTOR MUSICAL ===");
+            System.out.println("1 - Agregar nuevo tema");
+            System.out.println("2 - Reproducir lista completa");
             System.out.println("0 - Salir");
             System.out.print("Opción: ");
             opcion = sc.nextInt();
+            sc.nextLine();
 
             switch (opcion) {
+
                 case 1:
-                    // Agregar nuevos niveles a la pila
-                    if (pila.estaLlena()) {
-                        System.out.println("La pila está llena, no se pueden agregar más niveles.");
+                    if (cola.estaLlena()) {
+                        System.out.println("La lista está llena. No se pueden agregar más temas.");
                     } else {
-                        System.out.print("Ingrese el nivel de energía a apilar: ");
-                        valor = sc.nextInt();
-                        pila.push(valor);
-                        System.out.println("Nivel agregado correctamente.");
+                        System.out.print("Ingrese intérprete: ");
+                        String interprete = sc.nextLine();
+
+                        System.out.print("Ingrese género: ");
+                        String genero = sc.nextLine();
+
+                        System.out.print("Ingrese año de lanzamiento: ");
+                        int anio = sc.nextInt();
+                        sc.nextLine();
+
+                        TemaMusical t = new TemaMusical(genero, interprete, anio);
+                        cola.encolar(t);
+
+                        System.out.println("Tema agregado exitosamente.");
                     }
                     break;
 
                 case 2:
-                    // Mostrar el nivel que se encuentra en la cima de la pila (sin modificarla)
-                    if (pila.estaVacia()) {
-                        System.out.println("La pila está vacía.");
+                    if (cola.estaVacia()) {
+                        System.out.println("La lista está vacía.");
                     } else {
-                        // Sacamos el último elemento para verlo, y lo volvemos a meter
-                        cima = pila.pop();
-                        System.out.println("El nivel en la cima es: " + cima);
-                        pila.push(cima);
-                    }
-                    break;
-
-                case 3:
-                    // Pedir al usuario un valor X y contar cuántas veces aparece en la pila
-                    if (pila.estaVacia()) {
-                        System.out.println("La pila está vacía, no hay elementos para contar.");
-                    } else {
-                        System.out.print("Ingrese el valor X a buscar: ");
-                        valor = sc.nextInt();
-                        int repeticiones = pila.contarRep(valor);
-                        System.out.println("El valor " + valor + " aparece " + repeticiones + " veces en la pila.");
-                    }
-                    break;
-
-                case 4:
-                    // Mostrar todos los niveles sin perderlos
-                    if (pila.estaVacia()) {
-                        System.out.println("La pila está vacía.");
-                    } else {
-                        System.out.print("Niveles en la pila (de cima a fondo): ");
-                        while (!pila.estaVacia()) {
-                            valor = pila.pop();
-                            System.out.print(valor + " ");
-                            aux.push(valor);
+                        System.out.println("=== REPRODUCIENDO LISTA ===");
+                        while (!cola.estaVacia()) {
+                            TemaMusical t = cola.desencolar();
+                            System.out.println(t.toString());
+                            aux.encolar(t);
                         }
-                        System.out.println();
-                        // Restaurar la pila original
                         while (!aux.estaVacia()) {
-                            pila.push(aux.pop());
+                            cola.encolar(aux.desencolar());
                         }
                     }
                     break;
 
                 case 0:
-                    System.out.println("Saliendo del programa...");
+                    System.out.println("Saliendo...");
                     break;
 
                 default:
-                    System.out.println("Opción inválida, intente nuevamente.");
+                    System.out.println("Opción inválida.");
             }
 
         } while (opcion != 0);

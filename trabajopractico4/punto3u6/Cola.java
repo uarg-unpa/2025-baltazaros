@@ -46,7 +46,7 @@ public class Cola {
             return fin + 1;
     }
 
-    public int contar2() { //Versión alternativa del Punto 4.
+    public int contar2() { // Versión alternativa del Punto 4
         Cola aux = new Cola();
         int contador = 0;
         while (!estaVacia()) {

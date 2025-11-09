@@ -26,30 +26,60 @@ public class Pila {
     }
 
     public char sacar() {
-        char c = elementos[cima];
-        cima--;
-        return c;
+        if (!estaVacia()) {
+            char c = elementos[cima];
+            cima--;
+            return c;
+        }
+        return ' ';
+    }
+
+    public char verCima() {
+        if (!estaVacia()) {
+            return elementos[cima];
+        }
+        return ' ';
     }
 
     public boolean esPalindromo() {
+        if (this.estaVacia()) {
+            return true;
+        }
+        
         Pila invertida = new Pila();
-        Pila restauradora = new Pila();
-        boolean esIgual = true;
-
+        Pila temporal = new Pila();
+        Pila copiaOriginal = new Pila();
+        
         while (!this.estaVacia()) {
-            char c = sacar();
-            invertida.meter(c);
-            restauradora.meter(c);
+            char c = this.sacar();
+            temporal.meter(c);
+            copiaOriginal.meter(c);
         }
-        while (!restauradora.estaVacia()) this.meter(restauradora.sacar());
-
-        while (!invertida.estaVacia()) {
-            char inversa = invertida.sacar();
+        
+        while (!temporal.estaVacia()) {
+            this.meter(temporal.sacar());
+        }
+        
+        while (!copiaOriginal.estaVacia()) {
+            invertida.meter(copiaOriginal.sacar());
+        }
+        
+        boolean esPalindromo = true;
+        
+        while (!this.estaVacia() && !invertida.estaVacia()) {
             char original = this.sacar();
-            if (original != inversa & esIgual == true) esIgual = false;
-            restauradora.meter(original); 
+            char inverso = invertida.sacar();
+            
+            if (original != inverso) {
+                esPalindromo = false;
+            }
+            temporal.meter(original);
         }
-        while (!restauradora.estaVacia()) this.meter(restauradora.sacar());
-        return esIgual;
+        
+        while (!temporal.estaVacia()) {
+            this.meter(temporal.sacar());
+        }
+        
+        return esPalindromo;
     }
 }

@@ -3,7 +3,7 @@ package punto8;
 public class Cola {
     private final int MAX = 100;
     private char[] elementos;
-    private int ultimo; // cantidad de elementos cargados
+    private int ultimo; 
 
     public Cola() {
         elementos = new char[MAX];
@@ -19,7 +19,6 @@ public class Cola {
     }
 
     public void insertar(char elem) {
-        // No hay validaciones aquí (se asume control en el main)
         elementos[ultimo] = elem;
         ultimo++;
     }
