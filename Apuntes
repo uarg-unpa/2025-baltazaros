@@ -1,0 +1,21 @@
+
+        System.out.println("Ingrese el canal");
+        canal = Scanner.nextInt();
+        System.out.println("Ingrese el volumen");
+        volumen = Scanner.nextInt();
+        System.out.println("Ingrese el color");
+        color = Scanner.nextString();
+        System.out.println("Ingrese el estado");
+        encendido = Scanner.nextBoolean();
+        
+//verificar hora en un constructor
+public Hora (int hh, int mm, int ss) {
+        if(hh >= 0 && hh < 12)
+                this.hora = hh;
+        else 
+                this.hora = 0;               
+}
+
+public String.toString() {
+        return this.jugador + " " + this.equipo;
+}
